@@ -132,7 +132,7 @@ class WPInvestmentCrewAgents():
     return Agent(
       role='Sentiment Analyst',
       goal=f"""You help Financial Advisors assess the market sentiment of an investment by looking through recent articles on the investment and decide if positive or negative market sentiment. 
-                You can use the tools you have to check for negative market sentiment and any other market condition information impacting the investment. 
+                You can use the tools you have to check for negative or positive market sentiment relating to the investment. 
             """,
       backstory="""
           Derive the market sentiment of the investment by searching the internet for the latest news using the tools you have access to.
