@@ -1,9 +1,9 @@
-# CrewAI SaaS for Investment Analysis using LLMs
+# Unlock the Power of Generative AI with crewAI
 
-![CrewAI Logo](genAI_for_Developers_1200x675_v2.jpg)
+![Unlock the Power of Generative AI with crewAI](genAI_for_Developers_1200x675_v2.jpg)
 
 ## Introduction
-Welcome to the CrewAI SaaS for Investment Analysis project! This project builds upon the CrewAI Stock Analysis project, extending it to a full-fledged SaaS (Software as a Service) application. Using the CrewAI framework, this service automates the investment analysis process by orchestrating autonomous AI agents to collaborate and execute complex tasks efficiently. The SaaS functionality is powered by FastAPI micro-services.
+Welcome to the 'Unlock the Power of Generative AI with crewAI' Project! This project builds upon the CrewAI Stock Analysis project, extending it to a full-fledged Agentic application. Using the CrewAI framework, this service automates the investment analysis process by orchestrating autonomous AI agents to collaborate and execute complex tasks efficiently.
 
 This repository has been created for demo purposes for the 'GenAI for Developers' Meetup on July 11, 2024, titled "Unlock the Power of Generative AI with CrewAI."
 
