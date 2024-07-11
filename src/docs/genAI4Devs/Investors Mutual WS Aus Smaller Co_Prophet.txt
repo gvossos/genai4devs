@@ -1,0 +1,42 @@
+### Summary of Future Value Predictions for Investors Mutual WS Aus Smaller Co (IML0001AU)
+
+#### 7-Day Forecast
+- **Predicted Value on 2024-04-02:** 22.54 (Confidence Interval: 22.39 to 22.69)
+- **Predicted Value on 2024-04-03:** 22.59 (Confidence Interval: 22.45 to 22.73)
+- **Predicted Value on 2024-04-04:** 22.64 (Confidence Interval: 22.50 to 22.79)
+- **Predicted Value on 2024-04-05:** 22.68 (Confidence Interval: 22.54 to 22.81)
+- **Predicted Value on 2024-04-06:** 22.70 (Confidence Interval: 22.56 to 22.85)
+- **Predicted Value on 2024-04-07:** 22.72 (Confidence Interval: 22.57 to 22.87)
+- **Predicted Value on 2024-04-08:** 22.74 (Confidence Interval: 22.59 to 22.90)
+
+#### 30-Day Forecast
+- **Predicted Value on 2024-04-09:** 22.78 (Confidence Interval: 22.62 to 22.94)
+- **Predicted Value on 2024-04-10:** 22.83 (Confidence Interval: 22.66 to 22.99)
+- **Predicted Value on 2024-04-11:** 22.88 (Confidence Interval: 22.70 to 23.04)
+- **Predicted Value on 2024-04-12:** 22.91 (Confidence Interval: 22.73 to 23.09)
+- **Predicted Value on 2024-04-13:** 22.93 (Confidence Interval: 22.76 to 23.13)
+- **Predicted Value on 2024-04-14:** 22.96 (Confidence Interval: 22.78 to 23.15)
+- **Predicted Value on 2024-04-15:** 22.98 (Confidence Interval: 22.77 to 23.18)
+- **Predicted Value on 2024-04-16:** 23.02 (Confidence Interval: 22.79 to 23.22)
+- **Predicted Value on 2024-04-17:** 23.07 (Confidence Interval: 22.83 to 23.29)
+- **Predicted Value on 2024-04-18:** 23.11 (Confidence Interval: 22.88 to 23.36)
+- **Predicted Value on 2024-04-19:** 23.15 (Confidence Interval: 22.90 to 23.39)
+- **Predicted Value on 2024-04-20:** 23.17 (Confidence Interval: 22.90 to 23.45)
+- **Predicted Value on 2024-04-21:** 23.19 (Confidence Interval: 22.91 to 23.50)
+- **Predicted Value on 2024-04-22:** 23.22 (Confidence Interval: 22.90 to 23.54)
+- **Predicted Value on 2024-04-23:** 23.25 (Confidence Interval: 22.90 to 23.57)
+- **Predicted Value on 2024-04-24:** 23.30 (Confidence Interval: 22.94 to 23.67)
+- **Predicted Value on 2024-04-25:** 23.35 (Confidence Interval: 22.97 to 23.73)
+- **Predicted Value on 2024-04-26:** 23.39 (Confidence Interval: 22.95 to 23.78)
+- **Predicted Value on 2024-04-27:** 23.41 (Confidence Interval: 22.97 to 23.83)
+- **Predicted Value on 2024-04-28:** 23.43 (Confidence Interval: 22.96 to 23.86)
+- **Predicted Value on 2024-04-29:** 23.45 (Confidence Interval: 22.97 to 23.89)
+- **Predicted Value on 2024-04-30:** 23.49 (Confidence Interval: 22.99 to 23.97)
+- **Predicted Value on 2024-05-01:** 23.54 (Confidence Interval: 22.98 to 24.03)
+
+#### Insights
+- **Positive Movement:** The forecast indicates a steady positive trend in the value of the Investors Mutual WS Aus Smaller Co fund over the next 30 days.
+- **Expected Magnitude:** The predicted values show a gradual increase from 22.54 to 23.54, suggesting a moderate but consistent upward movement.
+- **Confidence Bands:** The confidence intervals are relatively narrow, indicating a high level of confidence in the predictions. The lower bounds are consistently above the current value, reinforcing the positive outlook.
+
+Overall, the forecast suggests a positive trend for the Investors Mutual WS Aus Smaller Co fund over the next 30 days, with a moderate but steady increase in value.

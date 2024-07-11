@@ -1,0 +1,8 @@
+service: default
+entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+runtime: python310
+instance_class: F4
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10

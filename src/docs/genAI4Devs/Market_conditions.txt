@@ -1,0 +1,36 @@
+### Trend Insights on the Economy Across the Last 3 Quarters
+
+#### GDP Growth (Annual %)
+- **Q1 2023**: 1.9356%
+- **Q2 2023**: 0.0%
+- **Q3 2023**: 0.0%
+
+**Insight**: The GDP growth rate has shown a significant decline from 1.9356% in Q1 2023 to 0.0% in Q2 and Q3 2023, indicating a stagnation in economic growth.
+
+#### Unemployment Total (% of Labor Force)
+- **Q1 2023**: 3.65%
+- **Q2 2023**: 3.638%
+- **Q3 2023**: 3.638%
+
+**Insight**: The unemployment rate has remained relatively stable, with a slight decrease from 3.65% in Q1 2023 to 3.638% in Q2 and Q3 2023. This suggests a stable labor market despite the stagnation in GDP growth.
+
+#### Consumer Price Index (CPI)
+- **Q1 2023**: 134.2112
+- **Q2 2023**: 0.0
+- **Q3 2023**: 0.0
+
+**Insight**: The Consumer Price Index (CPI) has shown a drastic drop from 134.2112 in Q1 2023 to 0.0 in Q2 and Q3 2023. This could indicate a significant deflationary trend or a data anomaly that needs further investigation.
+
+#### Inflation, Consumer Prices (Annual %)
+- **Q1 2023**: 8.0028%
+- **Q2 2023**: 0.0%
+- **Q3 2023**: 0.0%
+
+**Insight**: The inflation rate has dropped sharply from 8.0028% in Q1 2023 to 0.0% in Q2 and Q3 2023. This aligns with the CPI data and suggests a potential deflationary environment.
+
+### Summary
+- **GDP Growth**: Stagnation in economic growth.
+- **Unemployment**: Stable labor market.
+- **CPI and Inflation**: Potential deflationary trend or data anomaly.
+
+These insights indicate that while the labor market remains stable, the economy is experiencing stagnation in growth and potential deflationary pressures. Further analysis and data verification are recommended to confirm these trends.

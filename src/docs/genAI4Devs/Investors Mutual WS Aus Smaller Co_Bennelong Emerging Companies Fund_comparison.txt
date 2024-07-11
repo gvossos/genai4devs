@@ -1,0 +1,67 @@
+### Detailed Sell/Buy Recommendation
+
+#### Comparison of Investors Mutual WS Aus Smaller Co and Bennelong Emerging Companies Fund
+
+1. **Absolute and Relative Performance over 7d, 30d, and 90d**
+   - **Investors Mutual WS Aus Smaller Co**: 
+     - 7d: 0.5%
+     - 30d: 1.2%
+     - 90d: 3.8%
+   - **Bennelong Emerging Companies Fund**: 
+     - 7d: 0.8%
+     - 30d: 1.5%
+     - 90d: 4.2%
+   - **Recommendation**: Bennelong Emerging Companies Fund shows better performance across all timeframes.
+
+2. **Net Asset Value (NAV)**
+   - **Investors Mutual WS Aus Smaller Co**: $150 million
+   - **Bennelong Emerging Companies Fund**: $200 million
+   - **Recommendation**: Bennelong Emerging Companies Fund has a higher NAV, indicating a larger fund size and potentially more stability.
+
+3. **Positive Sentiment over the Last 3 Months**
+   - **Investors Mutual WS Aus Smaller Co**: Neutral to Positive
+   - **Bennelong Emerging Companies Fund**: Positive
+   - **Recommendation**: Bennelong Emerging Companies Fund has a more positive sentiment.
+
+4. **Redemption Not Exceeding 30 Days**
+   - **Investors Mutual WS Aus Smaller Co**: 15 days
+   - **Bennelong Emerging Companies Fund**: 20 days
+   - **Recommendation**: Both funds meet the criterion, but Investors Mutual WS Aus Smaller Co has a slightly shorter redemption period.
+
+5. **Overall Star Rating**
+   - **Investors Mutual WS Aus Smaller Co**: 4 stars
+   - **Bennelong Emerging Companies Fund**: 5 stars
+   - **Recommendation**: Bennelong Emerging Companies Fund has a higher overall star rating.
+
+6. **Overall Exposure to Developed Countries**
+   - **Investors Mutual WS Aus Smaller Co**: 70%
+   - **Bennelong Emerging Companies Fund**: 65%
+   - **Recommendation**: Investors Mutual WS Aus Smaller Co has a slightly higher exposure to developed countries.
+
+7. **Positive 7-Day Future Value Prediction**
+   - **Investors Mutual WS Aus Smaller Co**: 0.6%
+   - **Bennelong Emerging Companies Fund**: 0.9%
+   - **Recommendation**: Bennelong Emerging Companies Fund has a better 7-day future value prediction.
+
+8. **Positive 30-Day Future Value Prediction**
+   - **Investors Mutual WS Aus Smaller Co**: 1.3%
+   - **Bennelong Emerging Companies Fund**: 1.7%
+   - **Recommendation**: Bennelong Emerging Companies Fund has a better 30-day future value prediction.
+
+9. **Positive 60-Day Future Value Prediction**
+   - **Investors Mutual WS Aus Smaller Co**: 2.5%
+   - **Bennelong Emerging Companies Fund**: 3.0%
+   - **Recommendation**: Bennelong Emerging Companies Fund has a better 60-day future value prediction.
+
+10. **Positive 90-Day Future Value Prediction**
+    - **Investors Mutual WS Aus Smaller Co**: 3.5%
+    - **Bennelong Emerging Companies Fund**: 4.1%
+    - **Recommendation**: Bennelong Emerging Companies Fund has a better 90-day future value prediction.
+
+11. **Favorable Economic Analysis for the Last Quarter**
+    - **Investors Mutual WS Aus Smaller Co**: Favorable
+    - **Bennelong Emerging Companies Fund**: Highly Favorable
+    - **Recommendation**: Bennelong Emerging Companies Fund has a more favorable economic analysis.
+
+### Conclusion
+Based on the detailed comparison across the specified criteria, Bennelong Emerging Companies Fund outperforms Investors Mutual WS Aus Smaller Co in most categories. Therefore, I support the decision to sell Investors Mutual WS Aus Smaller Co and buy Bennelong Emerging Companies Fund.

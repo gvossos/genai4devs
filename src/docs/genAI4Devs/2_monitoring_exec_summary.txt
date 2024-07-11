@@ -1,0 +1,66 @@
+### Executive Summary Justifying the Poor Performance of Each Holding Investment
+
+#### VanEck MSCI Intl Sm Com Qual ETF
+- **Component Type:** Equities - Global - Mid / Small
+- **Performance Overview:**
+  - **Last 30 Days:** Benchmark vs Holding: 0.1%, Holding vs Holding Attribution: 0.0%
+  - **Last 60 Days:** Benchmark vs Holding: -1.1%, Holding vs Holding Attribution: 0.0%
+  - **Since Inception:** Benchmark vs Holding: -49.4%, Holding vs Holding Attribution: -1.2%
+  - **Return Since Purchase:** -2.5%
+- **Rationale for Poor Performance:**
+  The global equity markets have been impacted by tight labor markets and increased wage settlements, contributing to higher employment costs and inflation. Additionally, concerns regarding corporate earnings and company outlooks have persisted. These factors have led to a challenging environment for mid/small cap equities, resulting in the underperformance of the VanEck MSCI Intl Sm Com Qual ETF.
+
+#### Charter Hall Direct Industrial No.4
+- **Component Type:** Property & Infrastructure - All
+- **Performance Overview:**
+  - **Last 30 Days:** Benchmark vs Holding: -3.3%, Holding vs Holding Attribution: -0.4%
+  - **Last 60 Days:** Benchmark vs Holding: 4.7%, Holding vs Holding Attribution: 0.6%
+  - **Since Inception:** Benchmark vs Holding: -4.6%, Holding vs Holding Attribution: -0.6%
+  - **Return Since Purchase:** 2.2%
+- **Rationale for Poor Performance:**
+  The property and infrastructure sector has faced difficulties due to credit restrictions, making financing projects challenging. Additionally, rental yields on residential property remain low, and there is a risk of valuation downgrades for AREITs. These factors have negatively impacted the performance of Charter Hall Direct Industrial No.4.
+
+#### BetaShares Glb Energy Coms ETF-Ccy Hdg
+- **Component Type:** Equities - Global - Dynamic
+- **Performance Overview:**
+  - **Last 30 Days:** Benchmark vs Holding: -3.8%, Holding vs Holding Attribution: -0.2%
+  - **Last 60 Days:** Benchmark vs Holding: 1.0%, Holding vs Holding Attribution: 0.1%
+  - **Since Inception:** Benchmark vs Holding: -10.5%, Holding vs Holding Attribution: -0.5%
+  - **Return Since Purchase:** 6.3%
+- **Rationale for Poor Performance:**
+  The global energy sector has been negatively affected by rising interest rates, which have impacted returns from infrastructure projects. Additionally, sovereign risk, such as price caps on energy and utilities, has further reduced the attractiveness of investments in this sector, leading to the underperformance of the BetaShares Glb Energy Coms ETF-Ccy Hdg.
+
+#### Spheria Australian Microcap
+- **Component Type:** Equities - Australia - Small
+- **Performance Overview:**
+  - **Last 30 Days:** Benchmark vs Holding: -4.4%, Holding vs Holding Attribution: -0.1%
+  - **Last 60 Days:** Benchmark vs Holding: -0.6%, Holding vs Holding Attribution: 0.0%
+  - **Since Inception:** Benchmark vs Holding: -1.8%, Holding vs Holding Attribution: 0.0%
+  - **Return Since Purchase:** -4.5%
+- **Rationale for Poor Performance:**
+  Australian consumer demand continues to weaken due to higher mortgage interest rates affecting household budgets. This has led to concerns regarding corporate earnings and company outlooks, particularly impacting small-cap equities. Consequently, the Spheria Australian Microcap has underperformed.
+
+#### Hyperion Global Growth Companies B
+- **Component Type:** Equities - Global - Dynamic Core
+- **Performance Overview:**
+  - **Last 30 Days:** Benchmark vs Holding: -2.6%, Holding vs Holding Attribution: -0.1%
+  - **Last 60 Days:** Benchmark vs Holding: -3.8%, Holding vs Holding Attribution: -0.2%
+  - **Since Inception:** Benchmark vs Holding: -2.5%, Holding vs Holding Attribution: -0.1%
+  - **Return Since Purchase:** -2.6%
+- **Rationale for Poor Performance:**
+  The global equity markets have been affected by tight labor markets and increased wage settlements, contributing to higher employment costs and inflation. Additionally, concerns regarding corporate earnings and company outlooks have persisted. These factors have led to a challenging environment for large growth equities, resulting in the underperformance of Hyperion Global Growth Companies B.
+
+#### CFS FC-Acadian Global Equity Long Short
+- **Component Type:** Equities - Global - Dynamic
+- **Performance Overview:**
+  - **Last 30 Days:** Benchmark vs Holding: -1.6%, Holding vs Holding Attribution: 0.0%
+  - **Last 60 Days:** Benchmark vs Holding: -0.8%, Holding vs Holding Attribution: 0.0%
+  - **Since Inception:** Benchmark vs Holding: -1.1%, Holding vs Holding Attribution: 0.0%
+  - **Return Since Purchase:** 2.6%
+- **Rationale for Poor Performance:**
+  The global equity markets have been impacted by tight labor markets and increased wage settlements, contributing to higher employment costs and inflation. Additionally, concerns regarding corporate earnings and company outlooks have persisted. These factors have led to a challenging environment for dynamic equities, resulting in the underperformance of CFS FC-Acadian Global Equity Long Short.
+
+#### Summary and Conclusion
+The performance of the investments over the specified periods shows mixed results. Some investments have underperformed significantly since inception, while others have shown positive returns. The analysis highlights the need for a strategic review of the portfolio to address underperforming assets and optimize allocation for better returns.
+
+The current asset allocation views indicate that market conditions such as tight labor markets, increased wage settlements, higher interest rates, and concerns regarding corporate earnings have negatively impacted various sectors, leading to the underperformance of the investments in the portfolio.

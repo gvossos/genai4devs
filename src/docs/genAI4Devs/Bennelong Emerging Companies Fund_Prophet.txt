@@ -1,0 +1,50 @@
+### Summary of Future Value Predictions for Bennelong Emerging Companies Fund
+
+#### 7-Day Forecast:
+- **April 2, 2024:** Predicted value: 2.8932 (Confidence Interval: 2.8602 - 2.9252)
+- **April 3, 2024:** Predicted value: 2.8983 (Confidence Interval: 2.8662 - 2.9294)
+- **April 4, 2024:** Predicted value: 2.9024 (Confidence Interval: 2.8702 - 2.9354)
+- **April 5, 2024:** Predicted value: 2.9051 (Confidence Interval: 2.8715 - 2.9395)
+- **April 6, 2024:** Predicted value: 2.9059 (Confidence Interval: 2.8737 - 2.9401)
+- **April 7, 2024:** Predicted value: 2.9070 (Confidence Interval: 2.8726 - 2.9425)
+- **April 8, 2024:** Predicted value: 2.9088 (Confidence Interval: 2.8738 - 2.9403)
+
+#### 30-Day Forecast:
+- **April 2, 2024:** Predicted value: 2.8932 (Confidence Interval: 2.8592 - 2.9239)
+- **April 3, 2024:** Predicted value: 2.8983 (Confidence Interval: 2.8640 - 2.9307)
+- **April 4, 2024:** Predicted value: 2.9024 (Confidence Interval: 2.8684 - 2.9350)
+- **April 5, 2024:** Predicted value: 2.9051 (Confidence Interval: 2.8725 - 2.9378)
+- **April 6, 2024:** Predicted value: 2.9059 (Confidence Interval: 2.8753 - 2.9393)
+- **April 7, 2024:** Predicted value: 2.9070 (Confidence Interval: 2.8739 - 2.9392)
+- **April 8, 2024:** Predicted value: 2.9088 (Confidence Interval: 2.8742 - 2.9433)
+- **April 9, 2024:** Predicted value: 2.9126 (Confidence Interval: 2.8793 - 2.9450)
+- **April 10, 2024:** Predicted value: 2.9176 (Confidence Interval: 2.8849 - 2.9494)
+- **April 11, 2024:** Predicted value: 2.9218 (Confidence Interval: 2.8891 - 2.9588)
+- **April 12, 2024:** Predicted value: 2.9245 (Confidence Interval: 2.8896 - 2.9591)
+- **April 13, 2024:** Predicted value: 2.9253 (Confidence Interval: 2.8931 - 2.9616)
+- **April 14, 2024:** Predicted value: 2.9264 (Confidence Interval: 2.8919 - 2.9631)
+- **April 15, 2024:** Predicted value: 2.9282 (Confidence Interval: 2.8924 - 2.9646)
+- **April 16, 2024:** Predicted value: 2.9319 (Confidence Interval: 2.8969 - 2.9693)
+- **April 17, 2024:** Predicted value: 2.9370 (Confidence Interval: 2.8994 - 2.9773)
+- **April 18, 2024:** Predicted value: 2.9411 (Confidence Interval: 2.9032 - 2.9776)
+- **April 19, 2024:** Predicted value: 2.9438 (Confidence Interval: 2.8999 - 2.9837)
+- **April 20, 2024:** Predicted value: 2.9447 (Confidence Interval: 2.9045 - 2.9877)
+- **April 21, 2024:** Predicted value: 2.9458 (Confidence Interval: 2.9055 - 2.9881)
+- **April 22, 2024:** Predicted value: 2.9475 (Confidence Interval: 2.9054 - 2.9937)
+- **April 23, 2024:** Predicted value: 2.9513 (Confidence Interval: 2.9112 - 2.9960)
+- **April 24, 2024:** Predicted value: 2.9564 (Confidence Interval: 2.9111 - 3.0022)
+- **April 25, 2024:** Predicted value: 2.9605 (Confidence Interval: 2.9145 - 3.0112)
+- **April 26, 2024:** Predicted value: 2.9632 (Confidence Interval: 2.9168 - 3.0165)
+- **April 27, 2024:** Predicted value: 2.9641 (Confidence Interval: 2.9158 - 3.0147)
+- **April 28, 2024:** Predicted value: 2.9651 (Confidence Interval: 2.9160 - 3.0195)
+- **April 29, 2024:** Predicted value: 2.9669 (Confidence Interval: 2.9150 - 3.0217)
+- **April 30, 2024:** Predicted value: 2.9707 (Confidence Interval: 2.9196 - 3.0275)
+- **May 1, 2024:** Predicted value: 2.9758 (Confidence Interval: 2.9217 - 3.0313)
+
+#### Insights:
+- The predicted values for the Bennelong Emerging Companies Fund show a positive trend over the next 30 days.
+- The fund's value is expected to increase from approximately 2.8932 on April 2, 2024, to around 2.9758 by May 1, 2024.
+- The confidence intervals suggest a relatively stable upward movement, with the lower bounds consistently above the previous values, indicating a positive momentum.
+- The magnitude of the increase is moderate, with the fund's value expected to rise by approximately 0.0826 over the 30-day period.
+
+Overall, the forecast indicates a positive movement for the Bennelong Emerging Companies Fund over the next 30 days, with a moderate but consistent upward trend.

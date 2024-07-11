@@ -1,0 +1,36 @@
+{
+    "cSpell.words": [
+        "botocore",
+        "crewai",
+        "dotenv",
+        "dspy",
+        "eodhd",
+        "FAISS",
+        "fastapi",
+        "fitz",
+        "gradio",
+        "Groq",
+        "gunicorn",
+        "httpx",
+        "langchain",
+        "llms",
+        "LTSM",
+        "ngrok",
+        "Ollama",
+        "opeai",
+        "openai",
+        "praw",
+        "pydantic",
+        "pyngrok",
+        "templating",
+        "uvicorn",
+        "vectorstores",
+        "watchlist",
+        "WPLSTM",
+        "WPLTSM"
+    ],
+    "python.analysis.extraPaths": [
+        "./models",
+        "./src"
+    ],
+}
