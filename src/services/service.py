@@ -211,7 +211,6 @@ class MicroService():
 
             return status_state, final_result
 
-
     # Function to analyze the Portfolio switches (==transactions)
     def analyze_transactions_fastrack(self, json_str, pdf_upload, status_state):
         
@@ -296,9 +295,9 @@ class GVProcess():
         # State switch configuration
         
         self._start = True
-        self._monitoring_performed = False # SIMPLE genAI4Dev Use Case
+        self._monitoring_performed = True # SIMPLE genAI4Dev Use Case
         self._market_conditions_analysed = False # COMPLEX genAI4Dev Use Case
-        self._transactions_analysed = True # COMPLEX genAI4Dev Use Case
+        self._transactions_analysed = False # COMPLEX genAI4Dev Use Case
         self._switches_compared = False # COMPLEX genAI4Dev Use Case
         self._lstm_executed = False
         
@@ -409,8 +408,7 @@ class GVProcess():
         self.workflow.add_edge('transactions_analyzed', 'switches_compared')
         self.workflow.add_edge('switches_compared', 'lstm_executed')
         self.workflow.add_edge('lstm_executed', END)
-        
-        
+
     # Step 3: Define Nodes
     # We define nodes for classifying the input, handling greetings, and handling search queries.
 
@@ -462,7 +460,7 @@ class GVProcess():
         result = "Not activated"
       
       return result
-    
+
     def analyze_transactions(self, state):
       print(f"\n    GVProcess - 3. analyze_transactions...")
       
@@ -536,7 +534,7 @@ class GVProcess():
         result = "Not activated"
       
       return result
-  
+
     def finished(self, state):
       print("\n    5. Finishing...")
       print(f"        >perform_monitoring_output: {state.get('perform_monitoring_output', '').strip()}")
@@ -547,36 +545,34 @@ class GVProcess():
       
       _finished = "I've finished"
       return {"finished_output": _finished}
-    
+
     def start_next_node(self, state):
       # print("        ...satisfies start_next_node rule")
       if state.get('perform_monitoring_output') != None :
         return "monitoring_performed" 
-      
+
     def monitoring_performed_next_node(self, state):
       # print("        ...satisfies monitoring_performed_next_node rule")
       if state.get('analyze_market_conditions_output') != None: 
         return "market_conditions_analyzed" 
-    
+
     def market_conditions_analyzed_next_node(self, state):
       # print("        ...satisfies market_conditions_analyzed_next_node rule")
       if state.get('analyze_transactions_output') != None: 
         return "transactions_analyzed" 
-    
+
     def transactions_analyzed_next_node(self, state):
       # print("        ...satisfies transactions_analyzed_next_node rule")
       if state.get('compare_switch_output') != None:
         return "switches_compared" 
-      
+
     def switches_compared_next_node(self, state):
       # print("        ...satisfies switches_compared_next_node rule")
       if state.get('run_lstm_output') != None:
         return "lstm_executed" 
       else:
         return "start"
-      
-    
-    
+
     def execute(self):
       # Step 6: Compile and Run the Graph
       # Finally, we compile our graph and run it with some input.
