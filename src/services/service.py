@@ -10,7 +10,38 @@ from src.ai.ml.wplstm import WPLSTM, WPLSTMAttention
 # pip install python-dotenv
 from dotenv import load_dotenv
 
-import agentops
+#import agentops
+
+import phoenix as px
+from phoenix.trace.openai import OpenAIInstrumentor
+from phoenix.trace.langchain import LangChainInstrumentor
+
+
+from opentelemetry import trace as trace_api
+from opentelemetry.sdk import trace as trace_sdk
+from opentelemetry.sdk.resources import Resource
+from opentelemetry.sdk.trace.export import SimpleSpanProcessor, ConsoleSpanExporter
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import (
+    OTLPSpanExporter as HTTPSpanExporter,
+)
+from openinference.instrumentation.openai import OpenAIInstrumentor
+
+# Add Phoenix URL as collector
+span_phoenix_processor = SimpleSpanProcessor(HTTPSpanExporter(endpoint="https://app.phoenix.arize.com/v1/traces"))
+
+# Setup the tracer
+tracer_provider = trace_sdk.TracerProvider()
+tracer_provider.add_span_processor(span_processor=span_phoenix_processor)
+tracer_provider.add_span_processor(SimpleSpanProcessor(ConsoleSpanExporter()))
+trace_api.set_tracer_provider(tracer_provider=tracer_provider)
+
+# Turn on instrumentation for OpenAI
+OpenAIInstrumentor().instrument()
+
+# Initialize Langchain auto-instrumentation
+LangChainInstrumentor().instrument()
+
+
 
 # https://medium.com/@cplog/introduction-to-langgraph-a-beginners-guide-14f9be027141 
 # pip install langgraph
@@ -18,7 +49,14 @@ from langgraph.graph import StateGraph, END
 
 from typing import Dict, TypedDict, Optional
 
+
 load_dotenv()
+
+# Add API key
+OTEL_EXPORTER_OTLP_HEADERS = os.environ['OTEL_EXPORTER_OTLP_HEADERS'] # Your API Key here
+PHOENIX_CLIENT_HEADERS = os.environ['PHOENIX_CLIENT_HEADERS'] 
+PHOENIX_COLLECTOR_ENDPOINT = os.environ['PHOENIX_CLIENT_HEADERS']
+
 
 # Micro-services
 # api_routes point HERE for all business logic
@@ -57,7 +95,7 @@ class MicroService():
         
         print(f"\n        MicroService - perform_monitoring commencing....")
         
-        agentops.init(os.environ['AGENTOPS_API_KEY'])
+        #agentops.init(os.environ['AGENTOPS_API_KEY'])
         
         status_state = "Monitoring..."
         
@@ -73,7 +111,7 @@ class MicroService():
         
         status_state = "Complete"
         
-        agentops.end_session("Success") # Success|Fail|Indeterminate
+        #agentops.end_session("Success") # Success|Fail|Indeterminate
         
         return status_state, result
 
@@ -82,7 +120,7 @@ class MicroService():
         
         print(f"\n        MicroService - analyze_market_conditions commencing....")
         
-        agentops.init(os.environ['AGENTOPS_API_KEY'])
+        #agentops.init(os.environ['AGENTOPS_API_KEY'])
         
         status_state = "Analyzing..."
         
@@ -93,7 +131,7 @@ class MicroService():
         status_state = "Completed"
         
         
-        agentops.end_session("Success") # Success|Fail|Indeterminate
+        #agentops.end_session("Success") # Success|Fail|Indeterminate
          
         # Return the new status and the final result string
         # These will be displayed in the 'status_output' and 'result_output' textboxes respectively
@@ -104,7 +142,7 @@ class MicroService():
         
         print(f"\n                MicroService - analyze_investment commencing....")
         
-        agentops.init(os.environ['AGENTOPS_API_KEY'], skip_auto_end_session=True)
+        #agentops.init(os.environ['AGENTOPS_API_KEY'], skip_auto_end_session=True)
         
         investment = transaction[type]
         
@@ -163,7 +201,7 @@ class MicroService():
         
         print(f"\n            MicroService - compare_signal commencing....")
         
-        agentops.init(os.environ['AGENTOPS_API_KEY'])
+        #agentops.init(os.environ['AGENTOPS_API_KEY'])
         
         sell_investment_name = transaction["SELL"]['Investment']
         buy_investment_name = transaction["BUY"]['Investment']
@@ -183,7 +221,7 @@ class MicroService():
         
         print(f"\n            --------------------------------------------------------------------------------")
       
-        agentops.end_session("Success") # Success|Fail|Indeterminate
+        #agentops.end_session("Success") # Success|Fail|Indeterminate
         
         return f"Performance comparison of switch {i} completed."
         

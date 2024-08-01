@@ -70,6 +70,7 @@ class WPMonitoringCrewAgents():
         MonitoringTools.assess_aa_view_impacts,
       ],
       llm=llm,
+      planning=True
     )
     
   

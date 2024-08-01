@@ -9,6 +9,7 @@ import pickle
 #LSTM with attention
 import tensorflow as tf
 
+
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout, AdditiveAttention, Permute, Reshape, Multiply
 from keras.layers import BatchNormalization

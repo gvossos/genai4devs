@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "genai4devs"
+version = "0.1.0"
+description = "genAI for Developers"
+authors = ["George Vossos <gvossos@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.10.10"
+crewai = "^0.41.1"
+python-dotenv = "^1.0.1"
+pydantic = "^2.8.2"
+langchain-openai = "^0.1.19"
+langchain-community = "^0.2.10"
+langchain-tools = "^0.1.34"
+faiss-cpu = "^1.8.0.post1"
+tiktoken = "^0.7.0"
+pymupdf = "^1.24.9"
+pypdf2 = "^3.0.1"
+eodhd = "^1.0.30"
+scikit-learn = "^1.5.1"
+prophet = "^1.1.5"
+bs4 = "^0.0.2"
+boto3 = "^1.34.151"
+yfinance = "^0.2.41"
+arize-phoenix = {extras = ["evals"], version = "^4.16.1"}
+langgraph = "^0.1.19"
+fastapi = "^0.111.1"
+uvicorn = "^0.30.4"
+gradio = "^4.40.0"
+pyngrok = "^7.2.0"
+keras = "^3.4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

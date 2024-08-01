@@ -10,6 +10,13 @@ This repository has been created for demo purposes for the 'GenAI for Developers
 ## Inspiration
 The inspiration for CrewAI SaaS comes from [this video by @Kno2gether](https://www.youtube.com/watch?v=pFZHpFuzcBE&t=854s).
 
+## Setup Virtual Environment
+# Step 1 - install dependencies using poetry
+>poetry install
+
+# Step 2 - install Tensorflow via pip
+>pip install tensorflow
+
 ## Author
 Developed by [@gvossos](https://github.com/gvossos/).
 
