@@ -1,0 +1,94 @@
+### Detailed Summary of Investment Performance
+
+#### 1. VanEck MSCI Intl Sm Com Qual ETF
+- **Component Type:** Equities - Global - Mid / Small
+- **Months Held:** 1
+- **Allocation:** 2.50%
+- **Factor Summary:** Short - Risk Adjusted Performance - Total Return Sensitive Trading Model
+- **Style:** Medium Blend
+- **Sector:** Equity World Mid/Small
+- **Performance:**
+  - **30 Days:** Benchmark vs Holding: 0.1%, Holding vs Holding Attribution: 0.0%
+  - **60 Days:** Benchmark vs Holding: -1.1%, Holding vs Holding Attribution: 0.0%
+  - **Since Inception:** Benchmark vs Holding: -49.4%, Holding vs Holding Attribution: -1.2%
+  - **Return Since Purchase:** -2.5%
+- **Overall Score:** 0.00
+- **Trading Status:** Sell Order Cancelled - Redemption Disallowed
+
+#### 2. Charter Hall Direct Industrial No.4
+- **Component Type:** Property & Infrastructure - All
+- **Months Held:** 30
+- **Allocation:** 12.00%
+- **Factor Summary:** Short - Risk Adjusted Performance - Total Return Responsive Trading Model
+- **Style:** Real Estate
+- **Sector:** Unlisted and Direct Property
+- **Performance:**
+  - **30 Days:** Benchmark vs Holding: -3.3%, Holding vs Holding Attribution: -0.4%
+  - **60 Days:** Benchmark vs Holding: 4.7%, Holding vs Holding Attribution: 0.6%
+  - **Since Inception:** Benchmark vs Holding: -4.6%, Holding vs Holding Attribution: -0.6%
+  - **Return Since Purchase:** 2.2%
+- **Overall Score:** 0.00
+- **Trading Status:** Sell Order Cancelled - Redemption Disallowed
+
+#### 3. BetaShares Glb Energy Coms ETF-Ccy Hdg
+- **Component Type:** Equities - Global - Dynamic
+- **Months Held:** 8
+- **Allocation:** 5.00%
+- **Factor Summary:** Long - Risk Adjusted Performance, Momentum, Low Volatility - Price Return Responsive Trading Model
+- **Style:** Large Value
+- **Sector:** Equity Global Resources
+- **Performance:**
+  - **30 Days:** Benchmark vs Holding: -3.8%, Holding vs Holding Attribution: -0.2%
+  - **60 Days:** Benchmark vs Holding: 1.0%, Holding vs Holding Attribution: 0.1%
+  - **Since Inception:** Benchmark vs Holding: -10.5%, Holding vs Holding Attribution: -0.5%
+  - **Return Since Purchase:** 6.3%
+- **Overall Score:** 0.00
+- **Trading Status:** OK
+
+#### 4. Spheria Australian Microcap
+- **Component Type:** Equities - Australia - Small
+- **Months Held:** 2
+- **Allocation:** 1.70%
+- **Factor Summary:** Short - Risk Adjusted Performance, - Total Return Responsive Trading Model
+- **Style:** Small Blend
+- **Sector:** Equity Australia Mid/Small Blend
+- **Performance:**
+  - **30 Days:** Benchmark vs Holding: -4.4%, Holding vs Holding Attribution: -0.1%
+  - **60 Days:** Benchmark vs Holding: -0.6%, Holding vs Holding Attribution: 0.0%
+  - **Since Inception:** Benchmark vs Holding: -1.8%, Holding vs Holding Attribution: 0.0%
+  - **Return Since Purchase:** -4.5%
+- **Overall Score:** 0.00
+- **Trading Status:** OK
+
+#### 5. Hyperion Global Growth Companies B
+- **Component Type:** Equities - Global - Dynamic Core
+- **Months Held:** 0
+- **Allocation:** 5.50%
+- **Factor Summary:** Medium - Risk Adjusted Performance - Price Return Responsive Trading Model
+- **Style:** Large Growth
+- **Sector:** Equity World Large Growth
+- **Performance:**
+  - **30 Days:** Benchmark vs Holding: -2.6%, Holding vs Holding Attribution: -0.1%
+  - **60 Days:** Benchmark vs Holding: -3.8%, Holding vs Holding Attribution: -0.2%
+  - **Since Inception:** Benchmark vs Holding: -2.5%, Holding vs Holding Attribution: -0.1%
+  - **Return Since Purchase:** -2.6%
+- **Overall Score:** 0.00
+- **Trading Status:** OK
+
+#### 6. CFS FC-Acadian Global Equity Long Short
+- **Component Type:** Equities - Global - Dynamic
+- **Months Held:** 4
+- **Allocation:** 2.50%
+- **Factor Summary:** Long - Risk Adjusted Performance, Momentum, Low Volatility - Price Return Responsive Trading Model
+- **Style:** Medium Growth
+- **Sector:** Equity World Large Value
+- **Performance:**
+  - **30 Days:** Benchmark vs Holding: -1.6%, Holding vs Holding Attribution: 0.0%
+  - **60 Days:** Benchmark vs Holding: -0.8%, Holding vs Holding Attribution: 0.0%
+  - **Since Inception:** Benchmark vs Holding: -1.1%, Holding vs Holding Attribution: 0.0%
+  - **Return Since Purchase:** 2.6%
+- **Overall Score:** 0.00
+- **Trading Status:** OK
+
+### Overall Portfolio Performance
+The portfolio has shown mixed performance across different holdings and time periods. While some investments like Charter Hall Direct Industrial No.4 have shown positive attribution performance over 60 days, others like VanEck MSCI Intl Sm Com Qual ETF have underperformed significantly since inception. The overall portfolio performance needs to be reviewed, and potential action steps or recommendations for underperforming assets should be considered.

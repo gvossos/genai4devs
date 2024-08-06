@@ -29,6 +29,7 @@ uvicorn = "^0.30.4"
 gradio = "^4.40.0"
 pyngrok = "^7.2.0"
 keras = "^3.4.1"
+ipython = "^8.26.0"
 
 [build-system]
 requires = ["poetry-core"]
