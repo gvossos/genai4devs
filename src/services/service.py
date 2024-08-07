@@ -14,6 +14,7 @@ from IPython.display import Image, display
 
 #import agentops
 
+# pip install arize-phoenix
 import phoenix as px
 
 # Install OpenTelemetry
@@ -35,27 +36,20 @@ from phoenix.evals import (
 from phoenix.session.evaluation import get_qa_with_reference, get_retrieved_documents
 from phoenix.trace import DocumentEvaluations, SpanEvaluations
 
-tracer_provider = trace_sdk.TracerProvider()
-span_exporter = OTLPSpanExporter("http://localhost:6006/v1/traces")
-span_processor = SimpleSpanProcessor(span_exporter)
-tracer_provider.add_span_processor(span_processor)
-trace_api.set_tracer_provider(tracer_provider)
-
 # Turn on instrumentation for OpenAI
 # pip install openinference-instrumentation-openai openai
 from phoenix.trace.openai import OpenAIInstrumentor
-OpenAIInstrumentor().instrument()
+
 
 # Initialize Langchain auto-instrumentation
 # pip install openinference-instrumentation-langchain
 from phoenix.trace.langchain import LangChainInstrumentor
-LangChainInstrumentor().instrument()
+
 
 # Instrument multi agent applications using CrewAI
 # pip install openinference-instrumentation-crewai
 from openinference.instrumentation.crewai import CrewAIInstrumentor
 # Initialize the CrewAIInstrumentor before your application code.
-CrewAIInstrumentor().instrument()
 
 load_dotenv()
 
@@ -67,8 +61,18 @@ PHOENIX_COLLECTOR_ENDPOINT = os.environ['PHOENIX_CLIENT_HEADERS']
 # Phoenix Arize Project Name
 PHOENIX_PROJECT_NAME=os.environ['PHOENIX_PROJECT_NAME']
 
+#tracer_provider = trace_sdk.TracerProvider()
+#span_exporter = OTLPSpanExporter("http://localhost:6006/v1/traces")
+#span_processor = SimpleSpanProcessor(span_exporter)
+#tracer_provider.add_span_processor(span_processor)
+#trace_api.set_tracer_provider(tracer_provider)
+
+#OpenAIInstrumentor().instrument()
+#LangChainInstrumentor().instrument()
+#CrewAIInstrumentor().instrument()
+
 # To view traces in Phoenix, you will first have to start a Phoenix server. You can do this by running the following:
-session = px.launch_app()
+# session = px.launch_app()
 
 # https://medium.com/@cplog/introduction-to-langgraph-a-beginners-guide-14f9be027141 
 # pip install langgraph
@@ -89,13 +93,15 @@ from typing import Dict, TypedDict, Optional
 
 def kickoff_workflow(json_str, pdf_upload, pdf_watchlist, status_state):
         
-    print(f"\nKick-off workflow...")
+    print(f"\nBegin -> Kick-off workflow...")
     
     workflow = GVProcess(json_str,pdf_upload, pdf_watchlist)
     result = workflow.compile_run_graph()
     
     final_result = result
     analysis_status = "GVProcess Workflow Completed"
+    
+    print(f"\nEnd -> Kick-off workflow...")
     
     return analysis_status, final_result
 
@@ -112,7 +118,7 @@ class MicroService():
     # Function to analyse the watchlist
     def perform_monitoring(self, status_state):
         
-        print(f"\n        MicroService - perform_monitoring commencing....")
+        print(f"\n        Begin -> MicroService - perform_monitoring....")
         
         #agentops.init(os.environ['AGENTOPS_API_KEY'])
         
@@ -129,6 +135,8 @@ class MicroService():
         result = wp_crew.run()
         
         status_state = "Complete"
+        
+        print(f"\n        End -> MicroService - perform_monitoring....")
         
         #agentops.end_session("Success") # Success|Fail|Indeterminate
         
@@ -328,13 +336,18 @@ class MicroService():
 # First, we define the state structure for our graph.  We track states the following 6 states for the graph
 
 class GraphState(TypedDict):
-    start: Optional[str] = None
+    perform_monitoring_flag = False # SIMPLE genAI4Dev Use Case
+    analyse_market_conditions_flag = False # COMPLEX genAI4Dev Use Case
+    analyse_transactions_flag = False # COMPLEX genAI4Dev Use Case
+    compare_switches_flag = False # COMPLEX genAI4Dev Use Case
+    execute_lstm_flag = False
+    start_output: Optional[str] = None
     perform_monitoring_output: Optional[str] = None
     analyse_market_conditions_output: Optional[str] = None
     analyse_transactions_output: Optional[str] = None
-    compare_switch_output: Optional[str] = None
+    compare_switches_output: Optional[str] = None
     execute_lstm_output: Optional[str] = None
-    finished_output: Optional[str] = None
+    finish_output: Optional[str] = None
     
 # Define the workflow process(== Graph)
 class GVProcess():
@@ -347,54 +360,25 @@ class GVProcess():
         
         # The graph will call MicroServices to perform business logic
         self.mService = MicroService(json_str, pdf_upload, pdf_watchlist)
-        self.workflow = StateGraph(GraphState)
-        
-        ###################################################################
-        # Workflow State (==Graph) switch configuration
-        
-        #self._start_flag = True
-        self._perform_monitoring_flag = True # SIMPLE genAI4Dev Use Case
-        self._analyse_market_conditions_flag = False # COMPLEX genAI4Dev Use Case
-        self._analyse_transactions_flag = False # COMPLEX genAI4Dev Use Case
-        self._compare_switches_flag = False # COMPLEX genAI4Dev Use Case
-        self._execute_lstm_flag = False
-        
-        ##################################################################
+        self.graph_builder = StateGraph(GraphState)
         
         #Step 4: define the nodes we will cycle between
           
         #self.workflow.add_node("start", self.start_node)
-        self.workflow.add_node("perform_monitoring", self.perform_monitoring_node)
-        self.workflow.add_node("analyse_market_conditions", self.analyse_market_conditions_node)
-        self.workflow.add_node("analyse_transactions", self.analyse_transactions_node)
-        self.workflow.add_node("compare_switches", self.compare_switches_node)
-        self.workflow.add_node("execute_lstm", self.execute_lstm_node)
-        self.workflow.add_node("finish", self.finish_node)
+        self.graph_builder.add_node("perform_monitoring", self.perform_monitoring_node)
+        self.graph_builder.add_node("analyse_market_conditions", self.analyse_market_conditions_node)
+        self.graph_builder.add_node("analyse_transactions", self.analyse_transactions_node)
+        self.graph_builder.add_node("compare_switches", self.compare_switches_node)
+        self.graph_builder.add_node("execute_lstm", self.execute_lstm_node)
+        self.graph_builder.add_node("finish", self.finish_node)
         
         
         #Step 5: Set the entrypoint as 'start'
-        self.workflow.set_entry_point("perform_monitoring")
+        self.graph_builder.set_entry_point("perform_monitoring")
         
-        # Step 7: We now add conditional edges
-        """
-        self.workflow.add_conditional_edges(
-            # First, we define the node
-            "start",
-            #Next,, we pass in the function that will determine which node is called next
-            self.start_next_node,
-            # Finally, we pass in a mapping
-            # The kye(s) are strings, and the value(s) are other nodes
-            # END is a special node marking that the graph should finish
-            # What will happen is we will call 'start_next_node', and then the output of that
-            # will be matched against the keys in the mapping.
-            # Based on which one it matches, that node will be called.
-            {
-                "perform_monitoring": "perform_monitoring",
-            }
-        )
-        """
+        # We now add conditional edges
         
-        self.workflow.add_conditional_edges(
+        self.graph_builder.add_conditional_edges(
             # First, we define the node
             "perform_monitoring",
             # Next,, we pass in the function that will determine which node is called next
@@ -410,7 +394,7 @@ class GVProcess():
             }
         )
         
-        self.workflow.add_conditional_edges(
+        self.graph_builder.add_conditional_edges(
             "analyse_market_conditions",
             self.analyse_market_conditions_next_node,
             {
@@ -418,7 +402,7 @@ class GVProcess():
             }
         )
         
-        self.workflow.add_conditional_edges(
+        self.graph_builder.add_conditional_edges(
             "analyse_transactions",
             self.analyse_transactions_next_node,
             {
@@ -426,7 +410,7 @@ class GVProcess():
             }
         )
         
-        self.workflow.add_conditional_edges(
+        self.graph_builder.add_conditional_edges(
             "compare_switches",
             self.compare_switches_next_node,
             {
@@ -434,54 +418,36 @@ class GVProcess():
             }
         )
         
-      # Step 8: We now add a normal edge between nodes
-      # This means that after 'start' is called, 'monitoring_performed' node is called next
+        self.graph_builder.add_conditional_edges(
+            "execute_lstm",
+            self.execute_lstm_next_node,
+            {
+                "finish": "finish",
+            }
+        )
+        
+      # We now add a normal edge between nodes
+      # This means that after 'perform_monitoring' is called, 'analyse_market_conditions' node is called next
           
         #self.workflow.add_edge('start', 'perform_monitoring')
-        self.workflow.add_edge('perform_monitoring', 'analyse_market_conditions')
-        self.workflow.add_edge('analyse_market_conditions', 'analyse_transactions')
-        self.workflow.add_edge('analyse_transactions', 'compare_switches')
-        self.workflow.add_edge('compare_switches', 'execute_lstm')
-        self.workflow.add_edge('execute_lstm', 'finish')
-        self.workflow.add_edge('finish', END)
+        self.graph_builder.add_edge('perform_monitoring', 'analyse_market_conditions')
+        self.graph_builder.add_edge('analyse_market_conditions', 'analyse_transactions')
+        self.graph_builder.add_edge('analyse_transactions', 'compare_switches')
+        self.graph_builder.add_edge('compare_switches', 'execute_lstm')
+        self.graph_builder.add_edge('execute_lstm', 'finish')
+        self.graph_builder.add_edge('finish', END)
         
 
         
-    # Step 2: Define Nodes in the Graph
+    # Define Nodes in the Graph
     # We define nodes as functions
 
     # The agent: responsible for deciding what (if any) actions to take
-    """
-    def start_node(self, state):
-      print(f"\n    GVProcess - 0. Start Node...")
-      
-      _crewAI_response = self.handle_start()
-      
-      if _crewAI_response == "Not activated":
-        _start = "Not activated"
-        print(f"\n        Not Activated")
-      else:
-        _start = "I've Started"
-        print(f"\n        Successfully Processed")
-      
-      return {"start_output": _start}
-
-    #  A function to invoke the tools based on CONFIGURATION SWITCH values
-    def handle_start(self):
-      
-      if self._start_flag:
-        result = "Kick-Off"
-      else:
-        result = "Not activated"
-      
-      return result
-    
-    """
     
     def perform_monitoring_node(self, state):
-      print(f"\n    GVProcess - 1. perform_monitoring...")
+      print(f"\n    Begin -> perform_monitoring...")
       
-      _crewAI_response = self.handle_perform_monitoring()
+      _crewAI_response = self.handle_perform_monitoring(state)
       #print(f"perform_monitoring response: {_crewAI_response}")
       
       if _crewAI_response == "Not activated":
@@ -489,15 +455,13 @@ class GVProcess():
         print(f"\n        Not Activated")
       else:
         _perform_monitoring = "I've performed Monitoring"
-        print(f"\n        Successfully Processed")
+        print(f"\n        End -> perform_monitoring")
       
       return {"perform_monitoring_output": _perform_monitoring}
 
     #  A function to invoke the tools based on CONFIGURATION SWITCH values
-    def handle_perform_monitoring(self):
-      # print(f"    ....perform_monitoring by calling crewAI....")
-      
-      if self._perform_monitoring_flag:
+    def handle_perform_monitoring(self, state):
+      if state.get('perform_monitoring_output'):
         result = self.mService.perform_monitoring(status_state="Waiting...")
       else:
         result = "Not activated"
@@ -505,23 +469,21 @@ class GVProcess():
       return result
 
     def analyse_market_conditions_node(self, state):
-      print(f"\n    GVProcess - 2. analyse_market_conditions...")
+      print(f"\n    Begin -> analyse_market_conditions...")
       
-      _crewAI_response = self.handle_analyse_market_conditions()
+      _crewAI_response = self.handle_analyse_market_conditions(state)
       # print(f"analyse_market_conditions response: {_crewAI_response}")
       if _crewAI_response == "Not activated":
         _analyse_market_conditions = "Not activated"
         print(f"\n        Not Activated")
       else:
         _analyse_market_conditions = "I've analysed market conditions"
-        print(f"\n        Successfully Processed")
+        print(f"\n        End -> analyse_market_conditions")
       
       return {"analyse_market_conditions_output": _analyse_market_conditions}
 
-    def handle_analyse_market_conditions(self):
-      #print(f"    ....handle_analyse_market_conditions by calling crewAI....")
-      
-      if self._analyse_market_conditions_flag :
+    def handle_analyse_market_conditions(self, state):
+      if state.get('analyse_market_conditions_flag') :
         result = self.mService.analyse_market_conditions(status_state="Waiting...")
       else:
         result = "Not activated"
@@ -529,23 +491,21 @@ class GVProcess():
       return result
 
     def analyse_transactions_node(self, state):
-      print(f"\n    GVProcess - 3. analyse_transactions...")
+      print(f"\n    Begin -> analyse_transactions...")
       
-      _crewAI_response = self.handle_analyse_transactions()
+      _crewAI_response = self.handle_analyse_transactions(state)
       # print(f"analyse_transactions response: {_crewAI_response}")
       if _crewAI_response == "Not activated":
         _analyse_transactions = "Not activated"
         print(f"\n        Not Activated")
       else:
         _analyse_transactions = "I've analysed transactions"
-        print(f"\n        Successfully Processed")
+        print(f"\n        End -> analyse_transactions")
 
       return {"analyse_transactions_output": _analyse_transactions}
 
-    def handle_analyse_transactions(self):
-      # print(f"    ....handle_analyse_transactions by calling crewAI....")
-
-      if self._analyse_transactions_flag:
+    def handle_analyse_transactions(self, state):
+      if state.get('analyse_transactions_flag'):
         result = self.mService.analyse_transactions(status_state="Waiting...")
       else:
         result = "Not activated"
@@ -553,9 +513,9 @@ class GVProcess():
       return result
 
     def compare_switches_node(self, state):
-      print(f"\n    GVProcess - 4. compare_switches...")
+      print(f"\n    Begin -> compare_switches...")
       
-      _crewAI_response = self.handle_compare_switches()
+      _crewAI_response = self.handle_compare_switches(state)
       #print(f"compare_switch response: {_crewAI_response}")
       
       if _crewAI_response == "Not activated":
@@ -563,14 +523,12 @@ class GVProcess():
         print(f"\n        Not Activated")
       else:
         _compare_switches = "I've performed Switch comparison"
-        print(f"\n        Successfully Processed")
+        print(f"\n        End -> compare_switches")
       
       return {"compare_switches_output": _compare_switches}
 
-    def handle_compare_switches(self):
-      # print(f"    ....compare_switch by calling crewAI....")
-      
-      if self._compare_switches_flag:
+    def handle_compare_switches(self, state):
+      if state.get('compare_switches_flag'):
         result = self.mService.compare_switches(status_state="Waiting...")
       else:
         result = "Not activated"
@@ -578,9 +536,9 @@ class GVProcess():
       return result
 
     def execute_lstm_node(self, state):
-      print(f"\n    GVProcess - 5. execute_lstm...")
+      print(f"\n    Begin -> execute_lstm...")
       
-      _crewAI_response = self.handle_execute_lstm()
+      _crewAI_response = self.handle_execute_lstm(state)
       # print(f"run_lstm response: {_crewAI_response}")
       
       if _crewAI_response == "Not activated":
@@ -588,14 +546,12 @@ class GVProcess():
         print(f"\n        Not Activated")
       else:
         _execute_lstm = "I've run LSTM"
-        print(f"\n        Successfully Processed")
+        print(f"\n        End -> execute_LSTM")
         
       return {"execute_lstm_output": _execute_lstm}
 
-    def handle_execute_lstm(self):
-      # print(f"....handle_run_lstm by calling crewAI....")
-      
-      if self._execute_lstm_flag:
+    def handle_execute_lstm(self, state):
+      if state.get('execute_lstm_flag'):
         result = self.mService.execute_lstm(status_state="Waiting...")
       else:
         result = "Not activated"
@@ -603,18 +559,20 @@ class GVProcess():
       return result
 
     def finish_node(self, state):
-      print("\n    5. Finishing...")
+      print("\n    Begin -> Finishing...")
       print(f"        >start_output: {state.get('start_output', '').strip()}")
       print(f"        >perform_monitoring_output: {state.get('perform_monitoring_output', '').strip()}")
       print(f"        >analyse_market_conditions_output: {state.get('analyse_market_conditions_output', '').strip()}")
       print(f"        >analyse_transactions_output: {state.get('analyse_transactions_output', '').strip()}")
-      print(f"        >compare_switch_output: {state.get('compare_switch_output', '').strip()}")
-      print(f"        >run_lstm_output: {state.get('run_lstm_output', '').strip()}")
+      print(f"        >compare_switches_output: {state.get('compare_switches_output', '').strip()}")
+      print(f"        >execute_lstm_output: {state.get('execute_lstm_output', '').strip()}")
       
-      _finished = "I've finished"
-      return {"finished_output": _finished}
+      _finish = "I've finished"
+      
+      print(f"\n        End -> finish")
+      return {"finish_output": _finish}
 
-    # Step 6: setup the CONDITIONAL EDGE functions that will determine which node is called next
+    # Setup the CONDITIONAL EDGE functions that will determine which node is called next
     """
     def start_next_node(self, state):
       # print("        ...satisfies start_next_node rule")
@@ -624,25 +582,29 @@ class GVProcess():
     
     def perform_monitoring_next_node(self, state):
       # print("        ...satisfies monitoring_performed_next_node rule")
-      if state.get('analyse_market_conditions_output') != None: 
+      if state.get('perform_monitoring_output') != None: 
         return "analyse_market_conditions" 
 
     def analyse_market_conditions_next_node(self, state):
       # print("        ...satisfies market_conditions_analysed_next_node rule")
-      if state.get('analyse_transactions_output') != None: 
+      if state.get('analyse_market_conditions_output') != None: 
         return "analyse_transactions" 
 
     def analyse_transactions_next_node(self, state):
       # print("        ...satisfies transactions_analysed_next_node rule")
-      if state.get('compare_switch_output') != None:
+      if state.get('analyse_transactions_output') != None:
         return "compare_switches" 
 
     def compare_switches_next_node(self, state):
         # print("        ...satisfies switches_compared_next_node rule")
-        if state.get('run_lstm_output') != None:
+        if state.get('compare_switches_output') != None:
           return "execute_lstm" 
-        else:
-          return "start"
+        
+    def execute_lstm_next_node(self, state):
+        # print("        ...satisfies switches_compared_next_node rule")
+        if state.get('execute_lstm_output') != None:
+          return "finish" 
+
     
      # Step 3: Define the graph
 
@@ -651,7 +613,7 @@ class GVProcess():
       # Finally, we compile our graph and run it with some input.
 
       print(f"\n\nGVProcess...executing")
-      graph = self.workflow.compile()
+      graph = self.graph_builder.compile()
 
       try:
           # Generate the image
@@ -666,16 +628,9 @@ class GVProcess():
 
       except Exception as e:
           print(f"An error occurred: {e}")
-
-      """  
-      inputs = {
-        "transactions": {self._json_str},
-        "pdf_upload" : {self._pdf_upload}
-        }
-      """
-      
-      result = graph.invoke({'start':'Kick-off'})
-      
+       
+      result = graph.invoke({'start_output': 'Kick-Off'}
+                            )
       print(f"\n Workflow execution complete.  result={result}")
       
       return result

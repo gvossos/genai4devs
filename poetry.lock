@@ -3951,36 +3951,37 @@ sympy = "*"
 
 [[package]]
 name = "openai"
-version = "1.37.1"
+version = "1.40.0"
 description = "The official Python library for the openai API"
 optional = false
 python-versions = ">=3.7.1"
 files = [
-    {file = "openai-1.37.1-py3-none-any.whl", hash = "sha256:9a6adda0d6ae8fce02d235c5671c399cfa40d6a281b3628914c7ebf244888ee3"},
-    {file = "openai-1.37.1.tar.gz", hash = "sha256:faf87206785a6b5d9e34555d6a3242482a6852bc802e453e2a891f68ee04ce55"},
+    {file = "openai-1.40.0-py3-none-any.whl", hash = "sha256:eb6909abaacd62ef28c275a5c175af29f607b40645b0a49d2856bbed62edb2e7"},
+    {file = "openai-1.40.0.tar.gz", hash = "sha256:1b7b316e27b2333b063ee62b6539b74267c7282498d9a02fc4ccb38a9c14336c"},
 ]
 
 [package.dependencies]
 anyio = ">=3.5.0,<5"
 distro = ">=1.7.0,<2"
 httpx = ">=0.23.0,<1"
+jiter = ">=0.4.0,<1"
 pydantic = ">=1.9.0,<3"
 sniffio = "*"
 tqdm = ">4"
-typing-extensions = ">=4.7,<5"
+typing-extensions = ">=4.11,<5"
 
 [package.extras]
 datalib = ["numpy (>=1)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)"]
 
 [[package]]
 name = "openinference-instrumentation"
-version = "0.1.11"
+version = "0.1.12"
 description = "OpenInference instrumentation utilities"
 optional = false
 python-versions = "<3.13,>=3.8"
 files = [
-    {file = "openinference_instrumentation-0.1.11-py3-none-any.whl", hash = "sha256:77bd56171266e5404eac2429e87aa028db89541ace4357389dd1fd3240d28a61"},
-    {file = "openinference_instrumentation-0.1.11.tar.gz", hash = "sha256:3db49aa44cef5f0f0475e438a14d985ea571c98deffa248e2d33008e5b002920"},
+    {file = "openinference_instrumentation-0.1.12-py3-none-any.whl", hash = "sha256:75b6d76dcc39340cc027ce517595fabf6a3ae003176559e9c2b9f6256c91af7a"},
+    {file = "openinference_instrumentation-0.1.12.tar.gz", hash = "sha256:fdf7394a22cc367a002ab675d6cd8c33ac5390d050fd6ae89a631e31511c7094"},
 ]
 
 [package.dependencies]
@@ -3991,14 +3992,14 @@ opentelemetry-api = "*"
 test = ["opentelemetry-sdk"]
 
 [[package]]
-name = "openinference-instrumentation-langchain"
-version = "0.1.23"
-description = "OpenInference LangChain Instrumentation"
+name = "openinference-instrumentation-crewai"
+version = "0.1.0"
+description = "OpenInference Crewai Instrumentation"
 optional = false
-python-versions = "<3.13,>=3.8"
+python-versions = "<3.13,>=3.10"
 files = [
-    {file = "openinference_instrumentation_langchain-0.1.23-py3-none-any.whl", hash = "sha256:59412d8120f01d633dd816db6f1562358f1431368222b0fde210f01ea5013914"},
-    {file = "openinference_instrumentation_langchain-0.1.23.tar.gz", hash = "sha256:f856676814ef1dbe4b476102972648252ec396c8e494deb5442e522ccc6075ff"},
+    {file = "openinference_instrumentation_crewai-0.1.0-py3-none-any.whl", hash = "sha256:cafdae4f4e4dfe724eacdceff5f437116fd1f5f5018b7041fdb0960612ba0358"},
+    {file = "openinference_instrumentation_crewai-0.1.0.tar.gz", hash = "sha256:b1bfdc1744216194712f990753cf9f1d53b4d045e32abb81b889bc2bf77bbedf"},
 ]
 
 [package.dependencies]
@@ -4007,11 +4008,35 @@ openinference-semantic-conventions = "*"
 opentelemetry-api = "*"
 opentelemetry-instrumentation = "*"
 opentelemetry-semantic-conventions = "*"
+typing-extensions = "*"
+wrapt = "*"
+
+[package.extras]
+instruments = ["crewai (>=0.41.1)"]
+test = ["crewai (==0.36.0)", "crewai-tools (==0.4.26)", "opentelemetry-sdk", "responses"]
+
+[[package]]
+name = "openinference-instrumentation-langchain"
+version = "0.1.26"
+description = "OpenInference LangChain Instrumentation"
+optional = false
+python-versions = "<3.13,>=3.8"
+files = [
+    {file = "openinference_instrumentation_langchain-0.1.26-py3-none-any.whl", hash = "sha256:a40f71286a8bedf20253fce7c83a078f81b071ec0875ac1b8fcafa30dc038896"},
+    {file = "openinference_instrumentation_langchain-0.1.26.tar.gz", hash = "sha256:e73fdc9b09fc4127610f0616641088902cb9873ddae265b34efb86793b17b5f6"},
+]
+
+[package.dependencies]
+openinference-instrumentation = ">=0.1.12"
+openinference-semantic-conventions = ">=0.1.9"
+opentelemetry-api = "*"
+opentelemetry-instrumentation = "*"
+opentelemetry-semantic-conventions = "*"
 wrapt = "*"
 
 [package.extras]
 instruments = ["langchain-core (>=0.1.0)"]
-test = ["langchain (==0.1.0)", "langchain-community (==0.0.10)", "langchain-core (==0.1.8)", "langchain-openai (==0.0.2)", "opentelemetry-sdk", "respx"]
+test = ["langchain (==0.1.0)", "langchain-community (==0.0.10)", "langchain-core (==0.1.8)", "langchain-openai (==0.0.2)", "opentelemetry-sdk", "pytest-recording", "respx"]
 type-check = ["langchain-core (==0.1.5)"]
 
 [[package]]
@@ -4040,18 +4065,18 @@ test = ["llama-index (==0.10.54)", "llama-index-core (==0.10.53.post1)", "llama-
 
 [[package]]
 name = "openinference-instrumentation-openai"
-version = "0.1.10"
+version = "0.1.12"
 description = "OpenInference OpenAI Instrumentation"
 optional = false
 python-versions = "<3.13,>=3.8"
 files = [
-    {file = "openinference_instrumentation_openai-0.1.10-py3-none-any.whl", hash = "sha256:ee68d334d4290e9317f0dc35e302d6771dcf2c96d4172739127a5cd001d8bce4"},
-    {file = "openinference_instrumentation_openai-0.1.10.tar.gz", hash = "sha256:eb0bd6a0727c41c40d4aba6fdcc4af61dc6a9996e6e8e70c68c99fd656bd1e10"},
+    {file = "openinference_instrumentation_openai-0.1.12-py3-none-any.whl", hash = "sha256:6d1dee5bf1efe03a9543fb90450b04d376a9b8817818b90c05c81252cbb4fb64"},
+    {file = "openinference_instrumentation_openai-0.1.12.tar.gz", hash = "sha256:e2bbbf006446b22def884f76c508378e45da092be0c1262c48894d1540c3bf18"},
 ]
 
 [package.dependencies]
-openinference-instrumentation = ">=0.1.11"
-openinference-semantic-conventions = ">=0.1.7"
+openinference-instrumentation = ">=0.1.12"
+openinference-semantic-conventions = ">=0.1.9"
 opentelemetry-api = "*"
 opentelemetry-instrumentation = "*"
 opentelemetry-semantic-conventions = "*"
@@ -7029,4 +7054,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.10"
-content-hash = "6a780e63503f1ab718e2252361202fc5340e526c0dcbb89ce3c56a8105f8baf0"
+content-hash = "48f6e2a58f2b9258f5f47264e41d22ddffba8506761c9f2fe3a7a95f2288e77a"
