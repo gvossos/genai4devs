@@ -17,6 +17,22 @@ The inspiration for CrewAI SaaS comes from [this video by @Kno2gether](https://w
 # Step 2 - install Tensorflow via pip
 >pip install tensorflow
 
+## Setup Configurations
+# Step 3 - Setup your .env KEYS
+a.	OPENAI_API_KEY="KEY"
+b.	NGROK_API_KEY="KEY"
+c.	LLM_MODEL="gpt-4o"
+
+# Step 4 - Setup the workflow
+- I’ve only enabled the Monitoring crew / workflow
+        services/service.py > performance_monitoring_flag = True 
+
+- The 2x PDF files required as input into the Monitoring crew / workflow
+are in the data folder {Asset Allocation Views March Quarter 2024 - Final.pdf, 2b. High Growth Monitoring Risks v5.1.pdf}
+
+# Step 5 - Execute the workflow
+- main.py
+
 ## Author
 Developed by [@gvossos](https://github.com/gvossos/).
 
