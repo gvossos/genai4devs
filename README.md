@@ -19,9 +19,9 @@ The inspiration for CrewAI SaaS comes from [this video by @Kno2gether](https://w
 
 ## Setup Configurations
 # Step 3 - Setup your .env KEYS
-a.	OPENAI_API_KEY="KEY"
-b.	NGROK_API_KEY="KEY"
-c.	LLM_MODEL="gpt-4o"
+    OPENAI_API_KEY="KEY"
+    NGROK_API_KEY="KEY"
+    LLM_MODEL="gpt-4o"
 
 # Step 4 - Setup the workflow
 - I’ve only enabled the Monitoring crew / workflow
