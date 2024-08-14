@@ -13,6 +13,7 @@ The inspiration for CrewAI SaaS comes from [this video by @Kno2gether](https://w
 ## Setup Virtual Environment
 # Step 1 - create & activate your VM
 >conda create --name genai4devs python=3.10.10 pip
+
 >conda activate genai4dev
 
 # Step 2 - install poetry into VM
@@ -23,6 +24,7 @@ The inspiration for CrewAI SaaS comes from [this video by @Kno2gether](https://w
 
 # Step 4 - clone git repo and move into folder
 >git https://github.com/gvossos/genai4devs.git
+
 >cd genai4dev
 
 # Step 5 - install genai4devs dependencies using poetry
