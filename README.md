@@ -8,7 +8,7 @@ Welcome to the 'Unlock the Power of Generative AI with crewAI' Project! This pro
 This repository has been created for demo purposes for the 'GenAI for Developers' Meetup on July 11, 2024, titled "Unlock the Power of Generative AI with CrewAI."
 
 ## Inspiration
-The inspiration for CrewAI SaaS comes from [this video by @Kno2gether](https://www.youtube.com/watch?v=pFZHpFuzcBE&t=854s).
+The inspiration for genai4devs comes from [this video by @Kno2gether](https://www.youtube.com/watch?v=pFZHpFuzcBE&t=854s).
 
 ## Setup Virtual Environment
 # Step 1 - create & activate your VM
@@ -31,7 +31,7 @@ The inspiration for CrewAI SaaS comes from [this video by @Kno2gether](https://w
 >poetry install
 
 ## Setup Configurations
-# Step 6 - Rename '.env.examples' to '.env. and setup your KEYS
+# Step 6 - Rename '.env.examples' to '.env' and setup your KEYS
     OPENAI_API_KEY="KEY"
     NGROK_API_KEY="KEY"
     LLM_MODEL="gpt-4o"
