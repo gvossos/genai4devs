@@ -15,9 +15,16 @@ def evaluate_traces():
     trace_df = query_spans_from_phoenix(px_client)
     supported_evidence_eval_df = supported_evidence_eval(trace_df)
     overall_summary_eval_df = overall_summary_eval(trace_df)
-    
-    px.Client().log_evaluations(SpanEvaluations(eval_name="EvidenceSupported", dataframe=supported_evidence_eval_df))
-    px.Client().log_evaluations(SpanEvaluations(eval_name="Summarization", dataframe=overall_summary_eval_df))
+
+    if supported_evidence_eval_df.empty:
+        print("Info: CrewAI output format for supported evidence likely didn't match what the parser was looking for. Skipping EvidenceSupported evaluation logging.")
+    else:
+        px.Client().log_evaluations(SpanEvaluations(eval_name="EvidenceSupported", dataframe=supported_evidence_eval_df))
+
+    if overall_summary_eval_df.empty:
+        print("Info: CrewAI output format for overall summary likely didn't match what the parser was looking for. Skipping Summarization evaluation logging.")
+    else:
+        px.Client().log_evaluations(SpanEvaluations(eval_name="Summarization", dataframe=overall_summary_eval_df))
 
 def query_spans_from_phoenix(px_client):
     """
@@ -83,10 +90,19 @@ def extract_fact_sets_and_summaries(content, index):
         Dictionary containing extracted fact sets and summaries, or None if extraction fails
     """
     split_text = content.split("####")
-    if "Final Answer" in split_text[0]:
+    if "final answer".lower() in split_text[0].lower():
         fact_sets, summaries = [], []
         for entry in split_text[1:]:
-            parts = entry.split("**Justification**")
+            if "**Justification:**" in entry:
+                parts = entry.split("**Justification:**")
+            elif "**Justification**" in entry:
+                parts = entry.split("**Justification**")
+            elif "**Rationale:**" in entry:
+                parts = entry.split("**Rationale:**")
+            elif "**Rationale**" in entry:
+                parts = entry.split("**Rationale**")
+            else:
+                parts = [entry]
             if len(parts) == 2:
                 fact_sets.append(parts[0].strip())
                 summaries.append(parts[1].strip())
@@ -114,16 +130,27 @@ def extract_overall_summary(content, index):
     Returns:
         Dictionary containing extracted overall summary and full text, or None if extraction fails
     """
-    overall_summary_index = content.find("### Overall Summary")
+    import re
+    overall_summary_pattern = re.compile(r'^#+\s*Overall Summary', re.IGNORECASE | re.MULTILINE)
+    summary_pattern = re.compile(r'^#+\s*Summary', re.IGNORECASE | re.MULTILINE)
+    
+    overall_summary_match = overall_summary_pattern.search(content)
+    if overall_summary_match:
+        overall_summary_index = overall_summary_match.start()
+    else:
+        summary_match = summary_pattern.search(content)
+        overall_summary_index = summary_match.start() if summary_match else -1
+    
     if overall_summary_index != -1:
-        overall_summary = content[overall_summary_index + len("### Overall Summary"):].strip()
+        summary_header = "### Overall Summary" if content.find("### Overall Summary") != -1 else "### Summary"
+        overall_summary = content[overall_summary_index + len(summary_header):].strip()
         full_text = content[:overall_summary_index].strip()
         return {
             'context.span_id': index,
             'overall_summary': overall_summary,
             'full_text': full_text
         }
-    print(f"Row {index}: '### Overall Summary' not found in content.")
+    print(f"Row {index}: Neither '### Overall Summary' nor '### Summary' found in content.")
     return None
 
 def supported_evidence_eval(dataset: pd.DataFrame) -> pd.DataFrame:
@@ -145,6 +172,8 @@ def supported_evidence_eval(dataset: pd.DataFrame) -> pd.DataFrame:
     Hallucinated means that the summary is not supported by the fact set.
     """
     extracted_df = extract_data_from_llm_spans(dataset, 'fact_sets_and_summaries')
+    if extracted_df.empty:
+        return pd.DataFrame()
     supported_evidence_eval = llm_classify(
         dataframe=extracted_df,
         template=supported_evidence_prompt,
@@ -173,6 +202,8 @@ def overall_summary_eval(dataset: pd.DataFrame) -> pd.DataFrame:
     Return a score between 0 and 100, where 100 is the best score. Only return a score, no other text.
     """
     extracted_df = extract_data_from_llm_spans(dataset, 'overall_summary')
+    if extracted_df.empty:
+        return pd.DataFrame()
     summary_quality_eval = llm_generate(
         dataframe=extracted_df,
         template=summary_quality_prompt,
