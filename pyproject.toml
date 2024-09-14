@@ -38,6 +38,7 @@ opentelemetry-exporter-otlp-proto-http = "^1.26.0"
 openinference-instrumentation-openai = "^0.1.12"
 openinference-instrumentation-langchain = "^0.1.26"
 openinference-instrumentation-crewai = "^0.1.0"
+matplotlib = "^3.9"
 
 [build-system]
 requires = ["poetry-core"]

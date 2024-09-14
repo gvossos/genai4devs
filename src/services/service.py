@@ -59,7 +59,7 @@ load_dotenv()
 #PHOENIX_COLLECTOR_ENDPOINT = os.environ['PHOENIX_CLIENT_HEADERS']
 
 # Phoenix Arize Project Name
-PHOENIX_PROJECT_NAME=os.environ['PHOENIX_PROJECT_NAME']
+#PHOENIX_PROJECT_NAME=os.environ['PHOENIX_PROJECT_NAME']
 
 tracer_provider = trace_sdk.TracerProvider()
 span_exporter = OTLPSpanExporter("http://localhost:6006/v1/traces")

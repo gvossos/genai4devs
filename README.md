@@ -23,9 +23,9 @@ The inspiration for genai4devs comes from [this video by @Kno2gether](https://ww
 >pip install tensorflow
 
 # Step 4 - clone git repo and move into folder
->git https://github.com/gvossos/genai4devs.git
+>git clone https://github.com/gvossos/genai4devs.git
 
->cd genai4dev
+>cd genai4devs
 
 # Step 5 - install genai4devs dependencies using poetry
 >poetry install
